@@ -75,7 +75,10 @@ public class Example1{
 
         String s1 = "JAVA";
         String s2 = new String("JAVA");
-        String s3 = null;
-        
+        String s3 = null;   // 참조형 변수는 null을 지정할 수 있는 점을 이용한다.
+
+        System.out.println("result="+" "+s1);
+        System.out.println("A"+0);  // 문자열 + 숫자는 문자열로 변환하여 출력
+        System.out.println('A'+1);  // 문자 + 숫자는 문자에 숫자를 더한다음 해당하는 문자가 출력함
     }
 }

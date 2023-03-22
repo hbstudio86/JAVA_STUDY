@@ -23,6 +23,10 @@ class Circle{
     public void print_cirr(){
         System.out.println("Circle r :" + r);
     }
+
+    public double getArea(){
+        return r * r * 3.14;
+    }
 }
 
 public class Example1{
@@ -80,5 +84,14 @@ public class Example1{
         System.out.println("result="+" "+s1);
         System.out.println("A"+0);  // 문자열 + 숫자는 문자열로 변환하여 출력
         System.out.println('A'+1);  // 문자 + 숫자는 문자에 숫자를 더한다음 해당하는 문자가 출력함
+
+        s3 = sc.next(); // nextXXX로 메서드가 종류별로 있음
+        System.out.println(s3);
+        s3 = sc.nextLine();
+        System.out.println(s3);
+
+        if(sc.hasNextInt()){
+            System.out.println("True!!!");
+        }
     }
 }

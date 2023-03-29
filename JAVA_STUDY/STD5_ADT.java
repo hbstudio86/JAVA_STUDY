@@ -9,14 +9,63 @@ abstract class Shape{
 // 즉 일반 추상 클래스는 상속이 가능한 일반 메소드가 있고, 인터페이스는 100% 추상 메소드만 가짐
 // 데이터 필드는 클래스 상수만 가능(public static final)
 
-/**
- * InnerSTD5_ADT*/
-public interface InerSTD5_ADT {
-    void if_view();
+interface Movable{
+    void moveUp();
+    void moveDown();
+    // default void moveLeft(){
+    //     x--;
+    // }
+}
+// default 메소드는 부모 인터페이스에서 선언하면 자식 인터페이스에 추가 수정없이 사용이 가능하다?
+
+class MovablePoint implements Movable{
+    private int x,y;
+    public MovablePoint(int x,int y){
+        this.x = x;
+        this.y = y;
+    }
+    public String toString(){
+        return "Point at("+x+","+y+")";
+    }
+    public void moveUp(){y++;}
+    public void moveDown(){y--;}
+
+}
+
+class Employee{
+    int nSalary;
+    String szDept = null;
+    public void doJob(){
+        System.out.println("Do something");
+    }
+}
+
+class Sales extends Employee{
+    public Sales() {szDept="Sales Dept";}
+    public void doJob(){
+        System.out.println("Do Sales");
+    }
+}
+
+class Development extends Employee{
+    public Development() {szDept="Sales Dept";}
+    public void doJob(){
+        System.out.println("Do development");
+    }
 }
 
 public class STD5_ADT {
     static public void main(String[] args){
+        Movable m1 = new MovablePoint(5,5);
+        System.out.println(m1);
+        //m1.moveLeft();
+        //System.out.println(m1);
 
+        Employee emp1, emp2;
+        emp1 = new Sales();
+        emp2 = new Development();
+
+        emp1.doJob();
+        emp2.doJob();
     }
 }

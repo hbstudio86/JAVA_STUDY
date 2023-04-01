@@ -54,6 +54,41 @@ class Development extends Employee{
     }
 }
 
+// 열거형
+enum Day{
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+
+enum BaseballTeam{
+    LG(40,30),SS(30,40),KT(20,50),SK(35,35),NC(55,15); // 다섯개의 객체라고 생각해라
+    // Field Data를 사용 할 수가 있다. 
+    private final int win;
+    private final int lose;
+
+    private BaseballTeam(int win,int lose){
+        this.win = win;
+        this.lose = lose;
+    }
+
+    public double winsRate(){
+        return (win*100.0)/(win+lose);
+    }
+
+}
+
+// 익명클래스 : 일회용으로 사용하는 클래스, 클래스 선언과 동시에 객체 생성가능
+// 문법은 new 슈퍼클래스(){...} / new 인터페이스(){...} 부모가 슈퍼 클래스, 인터페이스 상속, 구현하는 것이다.?
+class CSuuper{
+    public int a = 10;
+    public void method1(){
+        System.out.println("SUPER1");
+    }
+    public void method2(){
+        System.out.println("SUPER2");
+    }
+}
+
+
 public class STD5_ADT {
     static public void main(String[] args){
         Movable m1 = new MovablePoint(5,5);
@@ -67,5 +102,31 @@ public class STD5_ADT {
 
         emp1.doJob();
         emp2.doJob();
+
+        Day day = Day.TUESDAY;
+        System.out.println(day);
+
+        for (Day d : Day.values()) {
+            System.out.println(d);           
+        }
+
+        BaseballTeam bt = BaseballTeam.LG;
+        System.out.println(bt.winsRate());
+
+        // 익명 클래스
+        CSuuper sub = new CSuuper(){
+            public int b = 20;
+            public void method1(){
+                System.out.println("sub1");
+            }
+            public void method2(){
+                System.out.println("sub3");
+            }
+        };
+        // 인라인 함수 같은 건가?
+        
+        sub.method1();
+        sub.method2();
+        System.out.println(sub.a);
     }
 }

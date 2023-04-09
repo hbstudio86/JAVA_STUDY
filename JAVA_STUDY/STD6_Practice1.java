@@ -20,8 +20,8 @@ public class STD6_Practice1 {
         System.out.println("Int형 제네릭");
         GeneClass<Integer> gc1 = new GeneClass<>();
         gc1.showField();
-        GeneClass<Double> gc2 = new GeneClass<Double>(20.1);    // 이런 형태도 상관은 없네
         
+        GeneClass<Double> gc2 = new GeneClass<Double>(20.1);    // 이런 형태도 상관은 없네
         gc2.showField();
     }
 }

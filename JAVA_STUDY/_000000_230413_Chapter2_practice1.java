@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class _000000_230413_Chapter2_practice1 {
     static public void main(String[] args){
         // 1. 배열
@@ -51,5 +53,30 @@ public class _000000_230413_Chapter2_practice1 {
         // 원래 있던 문자열을 바꾼다면??
         szStr2 = "JAVA is " + szStr5;
         System.out.println(szStr2);
+
+        // Scanner를 통한 입력
+        Scanner sc1 = new Scanner(System.in);
+
+        //sc1.hasNextLine();
+        System.out.println(sc1.nextLine());
+        System.out.println(sc1.nextLine());
+        
+        // .hasNextLine()함수는 입려이 계속 끝났는지 확인하기 위해사용하는 메소드 : EOF를 체크만 해주는 역할을 하는구나...
+        // 실질적으로 입력 스트림으로 부터 받은 입력 값은 모두 nextline으로 받는군...
+
+        sc1.nextLine(); // 입력 스트림으로 받은 값을 객체에 저장한다.
+        System.out.println(sc1);    // 그리고 프린트로 출력할 수 있다.
+
+        System.out.print("정수를 입력해보세요...");
+        sc1.nextInt();      // 정수를 입력받는다고 되어 있는데 정수가 아닌 값을 넣으면? => 예외처리가 발생
+        System.out.println(sc1);
+
+        Scanner sc2 = new Scanner(System.in);
+        int sc2Test;
+
+        sc2Test = sc2.nextInt();    // 리턴 값으로 출력을 할 수 있구나!
+        System.out.println(sc2Test);
+        // 그래서 hasNextLine or hasNextInt 와 같은 메서드들은 사용자 입력이 정확한지를 파악하기 위해 존재 하는구나...
+
     }
 }

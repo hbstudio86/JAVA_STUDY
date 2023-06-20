@@ -11,6 +11,7 @@ class SuperA{   // 시초
 
 public class _000000_TOTAL_Practice {
     public static void main(String[] args){
-
+        SuperA sa1 = new SuperA(10);
+        sa1.showdata();
     }
 }
